@@ -49,6 +49,7 @@
 
 [Create a subscription](./appendix/vm.md#create-a-subscription) to be able to create a VM.
 
+### 3. Sign in on `GitHub`
 
 1. Sign in on [`GitHub`](https://github.com/).
 
