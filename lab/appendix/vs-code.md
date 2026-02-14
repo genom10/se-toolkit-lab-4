@@ -31,7 +31,7 @@
   - [Run a command using the `VS Code Terminal`](#run-a-command-using-the-vs-code-terminal)
 - [`Explorer`](#explorer)
   - [Open the `Explorer`](#open-the-explorer)
-  - [Open the file using the `Explorer`](#open-the-file-using-the-explorer)
+  - [Open the local file using the `Explorer`](#open-the-local-file-using-the-explorer)
 - [`Source Control`](#source-control)
   - [Open the `Source Control`](#open-the-source-control)
   - [Close the `Source Control`](#close-the-source-control)
@@ -363,7 +363,7 @@ Actions:
 
    <img alt="Explorer" src="../images/appendix/vs-code/activity-bar-explorer.png" style="width:100px"></img>
 
-### Open the file using the `Explorer`
+### Open the local file using the `Explorer`
 
 1. [Open the `Explorer`](#open-the-explorer).
 2. Search for the file in the file tree.
