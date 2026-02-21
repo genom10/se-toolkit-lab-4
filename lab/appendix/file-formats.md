@@ -35,6 +35,11 @@ Docs:
 
 `JSON` (JavaScript Object Notation) is a human-readable text format for structured data.
 
+Docs:
+
+- [JSON.org](https://www.json.org/)
+- [Learn JSON in Y minutes](https://learnxinyminutes.com/docs/json/)
+
 Example:
 
 ```json
@@ -50,14 +55,14 @@ In this project, `JSON` is used for:
 - [`.vscode/settings.json`](../../.vscode/settings.json) — `VS Code` editor settings.
 - [`HTTP`](./http.md) request and response bodies when calling the `API`.
 
-Docs:
-
-- [JSON.org](https://www.json.org/)
-- [Learn JSON in Y minutes](https://learnxinyminutes.com/docs/json/)
-
 ### `TOML`
 
 `TOML` (Tom's Obvious, Minimal Language) is a configuration file format designed to be minimal and easy to read.
+
+Docs:
+
+- [TOML documentation](https://toml.io/)
+- [Learn TOML in Y minutes](https://learnxinyminutes.com/docs/toml/)
 
 Example:
 
@@ -73,14 +78,14 @@ port = 8080
 
 In this project, `TOML` is used for [`pyproject.toml`](../../pyproject.toml) — the [`Python`](./python.md) project configuration file.
 
-Docs:
-
-- [TOML documentation](https://toml.io/)
-- [Learn TOML in Y minutes](https://learnxinyminutes.com/docs/toml/)
-
 ### `YAML`
 
 `YAML` (YAML Ain't Markup Language) is a human-readable data serialization format commonly used for configuration files.
+
+Docs:
+
+- [YAML specification](https://yaml.org/)
+- [Learn YAML in Y minutes](https://learnxinyminutes.com/docs/yaml/)
 
 Example:
 
@@ -98,14 +103,13 @@ In this project, `YAML` is used for:
 - [`.github/workflows/`](../../.github/workflows/) — `GitHub Actions` workflow files.
 - [`docker-compose.yml`](../../docker-compose.yml) — [`Docker Compose`](./docker-compose.md) service definitions.
 
-Docs:
-
-- [YAML specification](https://yaml.org/)
-- [Learn YAML in Y minutes](https://learnxinyminutes.com/docs/yaml/)
-
 ### `.env`
 
 `.env` files store [environment variables](./environments.md) as key-value pairs, one per line.
+
+Docs:
+
+- [Dotenv File Format](https://hexdocs.pm/dotenvy/dotenv-file-format.html)
 
 Example:
 
@@ -121,6 +125,10 @@ In this project, `.env` files are used for local and `Docker` environment config
 
 `.py` files contain [`Python`](./python.md) source code.
 
+Docs:
+
+- [Learn Python in Y minutes](https://learnxinyminutes.com/docs/python/)
+
 Example:
 
 ```python
@@ -129,7 +137,3 @@ def greet(name: str) -> str:
 ```
 
 In this project, `.py` files are used for the application code and tests.
-
-Docs:
-
-- [Learn Python in Y minutes](https://learnxinyminutes.com/docs/python/)
