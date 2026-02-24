@@ -23,6 +23,9 @@
             bash.extra = ''
               export ROOT_DIR="$(pwd)"
             '';
+            packages = [
+              pkgs.nodejs_22
+            ];
             commandGroups = {
               lint = [
                 {
