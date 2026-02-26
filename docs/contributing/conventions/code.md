@@ -7,18 +7,19 @@ quality attribute so the reasoning behind every rule is explicit.
 
 - [Naming](#naming)
   - [Python (`src/`, `tests/`)](#python-src-tests)
-  - [JavaScript / React (`frontend/`)](#javascript--react-frontend)
+  - [TypeScript / React (`frontend/`)](#typescript--react-frontend)
   - [Environment variables](#environment-variables)
   - [Markdown / config files](#markdown--config-files)
 - [Comments and docstrings](#comments-and-docstrings)
   - [Python comments](#python-comments)
-  - [JavaScript comments](#javascript-comments)
+  - [TypeScript comments](#typescript-comments)
   - [TODO comments](#todo-comments)
 - [Type safety](#type-safety)
   - [Python types](#python-types)
-  - [JavaScript types](#javascript-types)
+  - [TypeScript types](#typescript-types)
 - [Linting and formatting](#linting-and-formatting)
   - [Python tools](#python-tools)
+  - [TypeScript tools](#typescript-tools)
   - [Markdown tools](#markdown-tools)
   - [Run everything at once](#run-everything-at-once)
 - [Shift-left testing](#shift-left-testing)
@@ -44,12 +45,12 @@ quality attribute so the reasoning behind every rule is explicit.
 | Test file | `test_<module>.py` | `test_interactions.py` |
 | Test function | `test_<behaviour>` | `test_filters_by_item_id` |
 
-### JavaScript / React (`frontend/`)
+### TypeScript / React (`frontend/`)
 
 | Element | Style | Example |
 | --- | --- | --- |
-| File — component | `PascalCase.jsx` | `App.jsx` |
-| File — utility | `camelCase.js` | `apiClient.js` |
+| File — component | `PascalCase.tsx` | `App.tsx` |
+| File — utility | `camelCase.ts` | `apiClient.ts` |
 | Function / variable | `camelCase` | `setItems` |
 | Constant | `UPPER_SNAKE_CASE` | `API_URL` |
 | Component | `PascalCase` | `function App()` |
@@ -85,7 +86,7 @@ quality attribute so the reasoning behind every rule is explicit.
 - Every public class and function has a docstring.
 - Use inline comments only when the logic is non-obvious.
 
-### JavaScript comments
+### TypeScript comments
 
 - Use `//` comments for non-obvious logic.
 - No JSDoc is required for small components; add it when a function
@@ -114,10 +115,12 @@ Mark unfinished work with `TODO` so it can be found by search:
 - Pyright runs in **strict** mode — zero errors allowed.
 - ty runs in parallel as a second opinion.
 
-### JavaScript types
+### TypeScript types
 
-- No TypeScript in this project yet. Compensate with descriptive
-  variable names and explicit prop shapes.
+- All component props and API response shapes must have **explicit
+  interfaces**.
+- Use the `strict` compiler option — zero errors allowed.
+- Prefer `interface` over `type` for object shapes.
 
 ## Linting and formatting
 
@@ -134,6 +137,12 @@ Mark unfinished work with `TODO` so it can be found by search:
 | Ruff (lint) | Linter | `poe lint` |
 | Pyright | Type checker (strict) | `poe pyright-check` |
 | ty | Type checker | `poe ty-check` |
+
+### TypeScript tools
+
+| Tool | Purpose | Command |
+| --- | --- | --- |
+| tsc | Type checker (strict, no emit) | `cd frontend && npx tsc --noEmit` |
 
 ### Markdown tools
 

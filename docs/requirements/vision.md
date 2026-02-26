@@ -90,7 +90,7 @@ The API must be fully testable via unit tests (business logic in isolation) and 
 
 ### Maintainability
 
-The codebase must be readable and modifiable by students with basic Python and JavaScript knowledge, following familiar patterns (FastAPI routers, SQLModel, React functional components).
+The codebase must be readable and modifiable by students with basic Python and TypeScript knowledge, following familiar patterns (FastAPI routers, SQLModel, React functional components).
 
 ### Security
 

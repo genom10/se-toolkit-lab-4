@@ -132,7 +132,7 @@ graph TD
     Developer([Developer])
 
     subgraph "Learning Management System — Docker Compose"
-        FE["React Frontend\n[JavaScript, Vite SPA]\nRuns in browser\nDev server: :5173"]
+        FE["React Frontend\n[TypeScript, Vite SPA]\nRuns in browser\nDev server: :5173"]
         CADDY["Caddy\n[Reverse Proxy]\nRoutes HTTP traffic to API\nHost port :42002"]
         API["FastAPI\n[Python, SQLModel, Uvicorn]\nREST API with Swagger UI\nContainer port :8000\nHost port :42001"]
         DB[("PostgreSQL\n[Relational Database]\nStores items, learners,\nand interactions\nHost port :42004")]
@@ -152,7 +152,7 @@ graph TD
 
 | Container      | Technology                         | Responsibility                                                                                                                                                                |
 | -------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| React Frontend | JavaScript, Vite, React            | Browser SPA: fetches items from the API and renders them in a table. In development runs as a hot-reload dev server; in production built to static files.                     |
+| React Frontend | TypeScript, Vite, React            | Browser SPA: fetches items from the API and renders them in a table. In development runs as a hot-reload dev server; in production built to static files.                     |
 | Caddy          | Go, Caddyfile                      | Reverse proxy: accepts external HTTP traffic and forwards it to the FastAPI application. Configured via environment variables (`CADDY_CONTAINER_PORT`, `APP_CONTAINER_PORT`). |
 | FastAPI        | Python, FastAPI, SQLModel, Uvicorn | REST API: handles all business logic, validates Bearer token on every request, and exposes auto-generated Swagger UI at `/docs`.                                              |
 | PostgreSQL     | PostgreSQL                         | Relational database: stores the `item`, `learner`, and `interacts` tables. Initialised with schema and seed data from `init.sql` on first startup.                            |

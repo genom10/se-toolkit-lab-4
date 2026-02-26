@@ -4,10 +4,17 @@ import './App.css'
 const API_URL = import.meta.env.VITE_API_URL
 const API_TOKEN = import.meta.env.VITE_API_TOKEN
 
+interface Item {
+  id: number
+  type: string
+  title: string
+  created_at: string
+}
+
 function App() {
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState<Item[]>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     fetch(`${API_URL}/items`, {
@@ -17,11 +24,11 @@ function App() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         return res.json()
       })
-      .then((data) => {
+      .then((data: Item[]) => {
         setItems(data)
         setLoading(false)
       })
-      .catch((err) => {
+      .catch((err: Error) => {
         setError(err.message)
         setLoading(false)
       })
