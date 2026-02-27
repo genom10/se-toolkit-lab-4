@@ -99,7 +99,7 @@ Complete these steps:
    The output should be similar to this:
 
    ```terminal
-   nix (Determinate Nix 3.15.2) 2.33.1
+   nix (Determinate Nix 3.16.3) 2.33.3
    ```
 
 ### Install `jq`
