@@ -5,6 +5,12 @@ from datetime import datetime
 from sqlmodel import Field, SQLModel
 
 
+class CreateInteraction(SQLModel):
+    learner_id: int
+    item_id: int
+    kind: str
+
+
 class InteractionLog(SQLModel, table=True):
     """An interaction log entry in the database."""
 
@@ -20,8 +26,8 @@ class InteractionLog(SQLModel, table=True):
 class InteractionModel(SQLModel):
     """Response schema for an interaction."""
 
-    id: int
+    id: int | None
     learner_id: int
     item_id: int
     kind: str
-    timestamp: datetime
+    created_at: datetime | None

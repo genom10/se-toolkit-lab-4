@@ -111,7 +111,7 @@ Title: `[Task] Observe System Component Interaction`
 
 ## 2. Acceptance criteria
 
-- [ ] Issue has the correct title.
-- [ ] Issue comment includes a screenshot of the browser developer tools showing the HTTP request and response.
-- [ ] Issue comment includes a screenshot of `pgAdmin` showing the corresponding database row.
-- [ ] Issue is closed.
+- [x] Issue has the correct title.
+- [x] Issue comment includes a screenshot of the browser developer tools showing the HTTP request and response.
+- [x] Issue comment includes a screenshot of `pgAdmin` showing the corresponding database row.
+- [x] Issue is closed.

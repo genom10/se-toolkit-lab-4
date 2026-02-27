@@ -4,8 +4,8 @@ from fastapi import APIRouter, Depends
 from sqlmodel.ext.asyncio.session import AsyncSession
 
 from app.database import get_session
-from app.db.interactions import read_interactions
-from app.models.interaction import InteractionLog, InteractionModel
+from app.db.interactions import read_interactions, insert_interaction
+from app.models.interaction import InteractionLog, InteractionModel, CreateInteraction
 
 router = APIRouter()
 
@@ -26,3 +26,12 @@ async def get_interactions(
     """Get all interactions, optionally filtered by item."""
     interactions = await read_interactions(session)
     return _filter_by_item_id(interactions, item_id)
+
+
+@router.post('/interactions_logs/', response_model=InteractionModel)
+async def create_interaction(
+    body: CreateInteraction,
+    session: AsyncSession = Depends(get_session)
+):
+    "Create interaction"
+    return await insert_interaction(session, body.learner_id, body.item_id, body.kind)
