@@ -80,6 +80,9 @@ Title: `[Task] Back-end Testing`
 
    Name the test `test_filter_excludes_interaction_with_different_learner_id`.
 
+> [!NOTE]
+> Feel free to use AI to generate the tests. Make sure to provide them with necessary context.
+
 3. [Run using the `VS Code Terminal`](../../../wiki/vs-code.md#run-a-command-using-the-vs-code-terminal):
 
    ```terminal
@@ -165,8 +168,10 @@ return [i for i in interactions if i.item_id == item_id]
    1. Set the base URL of your deployed API:
 
       ```terminal
-      export API_BASE_URL=https://<your-vm-hostname>
+      export API_BASE_URL=https://<your-vm-address>
       ```
+
+      See [`<your-vm-ip-address>`](../../../wiki/vm.md#your-vm-ip-address).
 
    2. Set the API token (use the same value as in your `.env.secret`):
 
