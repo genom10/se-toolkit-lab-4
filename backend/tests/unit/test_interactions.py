@@ -36,7 +36,7 @@ def test_filter_excludes_interaction_with_different_learner_id() -> None:
     assert res[0].item_id == 1
     assert res[0].learner_id == 2
 
-def test_filter_with_non_existent_item_id() -> None:
+def test_get_interactions_returns_200() -> None:
     interactions = [_make_log(1, 1, 1)]
     result = _filter_by_item_id(interactions, 999)
     assert result == []
