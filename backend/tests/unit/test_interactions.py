@@ -24,3 +24,24 @@ def test_filter_returns_interaction_with_matching_ids() -> None:
     result = _filter_by_item_id(interactions, 1)
     assert len(result) == 1
     assert result[0].id == 1
+
+def test_filter_excludes_interaction_with_different_learner_id() -> None:
+    log1 = _make_log(1, 2, 1)
+    log2 = _make_log(2, 1, 2)
+    data = [log1, log2]
+    
+    res = _filter_by_item_id(data, 1)
+    
+    assert len(res) == 1
+    assert res[0].item_id == 1
+    assert res[0].learner_id == 2
+
+def test_get_interactions_returns_200() -> None:
+    interactions = [_make_log(1, 1, 1)]
+    result = _filter_by_item_id(interactions, 999)
+    assert result == []
+
+def test_filter_with_large_number_of_interactions() -> None:
+    interactions = [_make_log(i, 1, 1) for i in range(100)]
+    result = _filter_by_item_id(interactions, 1)
+    assert len(result) == 100
