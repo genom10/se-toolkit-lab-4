@@ -18,10 +18,10 @@ def _filter_by_item_id(
     return [i for i in interactions if i.item_id == item_id]
 
 
-@router.get("/interactions/", response_model=list[InteractionModel])
+@router.get("/", response_model=list[InteractionModel])
 async def get_interactions(
     item_id: int | None = None,
     session: AsyncSession = Depends(get_session),
 ) -> list[InteractionLog]:
-    interactions = await read_interactions(session, item_id)
+    interactions = await read_interactions(session)
     return interactions
