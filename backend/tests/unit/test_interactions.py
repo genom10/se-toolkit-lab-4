@@ -24,3 +24,14 @@ def test_filter_returns_interaction_with_matching_ids() -> None:
     result = _filter_by_item_id(interactions, 1)
     assert len(result) == 1
     assert result[0].id == 1
+
+def test_filter_by_item_id_returns_only_matching():
+    interactions = [
+        _make_log(1, 1, 1),
+        _make_log(2, 1, 2),
+        _make_log(3, 2, 1),
+    ]
+    filtered = _filter_by_item_id(interactions, 1)
+    assert len(filtered) == 2
+    assert all(log.item_id == 1 for log in filtered)
+    assert {log.id for log in filtered} == {1, 3}
